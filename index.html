@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moon Light Parallax Effects | Vanilla Javascript</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body>
+    <section>
+      <img src="bg.jpg" id="bg" alt="Sky full of stars" />
+      <img src="moon.png" id="moon" alt="Picture of the moon" />
+      <img src="mountain.png" id="mountain" alt="Picture of mounatins" />
+      <img src="road.png" id="road" alt="Picture of the road" />
+      <h2 id="text">Moon Light</h2>
+    </section>
+    <div>
+      <h2>Parallax Background Scrolling</h2>
+      <h3>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit
+        delectus ratione amet alias, natus in ullam, iusto molestias adipisci
+        omnis ipsa, fugit quis! Repudiandae cupiditate officia sit? Explicabo,
+        at perferendis! Lorem ipsum dolor sit amet, consectetur adipisicing
+        elit. Labore minima cum aliquid blanditiis enim? Necessitatibus, sit
+        molestias obcaecati possimus consectetur temporibus explicabo veniam,
+        debitis ea optio repellat? Vel, aliquid facilis!
+      </h3>
+    </div>
+    <script type="text/javascript">
+      let bg = document.getElementById("bg");
+      let moon = document.getElementById("moon");
+      let mountain = document.getElementById("mountain");
+      let road = document.getElementById("road");
+      let text = document.getElementById("text");
+
+      window.addEventListener("scroll", function () {
+        let value = window.scrollY; //a move down is + 10px
+        bg.style.top = value * 0.5 + "px";
+        moon.style.left = -value * 0.5 + "px";
+        mountain.style.top = -value * 0.15 + "px";
+        road.style.top = value * 0.15 + "px";
+        text.style.top = value * 1 + "px";
+      });
+    </script>
+  </body>
+</html>
